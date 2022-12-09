@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EstimateItemSubreport" pageWidth="559" pageHeight="842" columnWidth="559" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="0f91f5ac-6617-4dd6-858b-cc56c3b200ed">
+	<parameter name="total" class="java.lang.Integer">
+		<parameterDescription><![CDATA[total]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="brNumber" class="java.lang.String"/>
+	<field name="ticketSituation" class="java.lang.String"/>
+	<field name="ticketSituationDesc" class="java.lang.String"/>
+	<field name="serieNumber" class="java.lang.String"/>
+	<field name="barcodeImage" class="java.awt.image.BufferedImage"/>
+	<field name="departmentOrigin" class="java.lang.String"/>
+	<field name="interventionCode" class="java.lang.String"/>
+	<field name="defectId" class="java.lang.String"/>
+	<field name="defectDescription" class="java.lang.String"/>
+	<field name="ticketDescription" class="java.lang.String"/>
+	<field name="interventionObs" class="java.lang.String"/>
+	<field name="interventionDescription" class="java.lang.String"/>
+	<field name="fiscalClassification" class="java.lang.String"/>
+	<field name="techCode" class="java.lang.String"/>
+	<field name="costCenter" class="java.lang.String"/>
+	<field name="value" class="java.math.BigDecimal"/>
+	<field name="areaValue" class="java.math.BigDecimal"/>
+	<field name="weight" class="java.math.BigDecimal"/>
+	<field name="warranty" class="java.lang.String"/>
+	<field name="cancelDate" class="java.lang.String"/>
+	<field name="unityDescription" class="java.lang.String"/>
+	<field name="barcode" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="162" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="8" width="44" height="16" uuid="41d05244-2d44-4d61-bf20-5782a492aada"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Num. BR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="199" y="8" width="65" height="16" uuid="5a63fb90-660c-4132-9a60-540293db91af"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Depto. Origem:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="199" y="58" width="38" height="16" uuid="fbd1d6a5-57ca-4db6-8d3b-dc869bf16358"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Defeito :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="199" y="24" width="48" height="16" uuid="bcb4a79c-6505-49b2-bbc6-2c7d9f01093d"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Intervenção:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="208" y="117" width="28" height="36" uuid="06f374fd-c3ee-4281-abf2-d5446b9fedfd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Obs :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="160" width="559" height="1" uuid="38111537-2f52-41f9-b0f5-1e445a999e30">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="54" y="9" width="90" height="15" uuid="dbf39819-4b9b-4eda-bffd-d528cb380c5b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brNumber}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="249" y="25" width="136" height="31" uuid="a86bd283-959f-47e7-a9cb-bd43a7958ad6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{interventionCode} + " -  " + $F{interventionDescription}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="239" y="59" width="146" height="30" uuid="5a8d8b1e-9885-44fe-803f-c64be0b4c662"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{defectId}  + " - " + $F{defectDescription}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="237" y="118" width="146" height="35" uuid="948242f9-0d86-4b88-b84a-d4b2a2b89a42"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{interventionObs}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="24" width="44" height="16" uuid="81fb110a-f6e3-4741-aae0-22afd0d5ffc0"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Situação:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="40" width="44" height="16" uuid="ea31485b-2c91-425b-9873-5fc30deddc7f"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serie:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="56" width="56" height="16" uuid="23dda0af-089d-4c5d-b24f-7c742f56518b"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cod. Barras:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="9" width="55" height="16" uuid="9468a7c1-f43d-4d5b-ab98-bc7def2ed02a"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Class. Fiscal:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="41" width="34" height="16" uuid="fefccbe8-44f9-4663-ab70-a9eee74ae56f"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C.Custo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="25" width="34" height="16" uuid="4ffd9c94-51ef-4b50-9c1d-26904d35f033"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tecnica:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="73" width="54" height="16" uuid="e69d3933-12b5-4268-8781-976f3ebf1a4b"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Refer. :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="57" width="54" height="16" uuid="e88d9bcd-79ea-4746-87a5-d373594710d6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Reparo:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="427" y="26" width="126" height="15" uuid="7e14ef30-5d7a-480b-b96f-eea7b2456b87"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{techCode}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="427" y="41" width="126" height="15" uuid="9a1b7c16-88bc-4d01-8edd-d067912f153a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{costCenter}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="447" y="57" width="106" height="15" uuid="ba97e725-b37e-4329-a412-6e505351b31b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="447" y="74" width="112" height="14" uuid="3eb81f51-52fb-4303-9c3d-40a0d2e267c3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{areaValue}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="54" y="24" width="144" height="15" uuid="b97d752f-84bd-430d-b442-1ec8738bcf70"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ticketSituation} + " - "  +$F{ticketSituationDesc}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="54" y="41" width="94" height="15" uuid="c6961054-2411-4a6e-95e7-0eb2952b1bf1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serieNumber}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="264" y="9" width="119" height="15" uuid="2b5c1dee-e241-46ad-8788-31db56b7d430"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{departmentOrigin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="394" y="106" width="54" height="16" uuid="861b4376-4236-4db2-9a65-30e5a4d33797"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cancelado:
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="90" width="54" height="16" uuid="d1451f94-d357-42cd-b7d0-6f43457d3011">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Garantia:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="448" y="90" width="106" height="15" uuid="b1853248-cb53-4b18-b6ea-0db3e21185ca"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{warranty}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="448" y="107" width="111" height="14" uuid="33081291-d37e-4f8f-943c-8f74cad02a90"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cancelDate}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="67" y="57" width="119" height="31" uuid="258617b8-492e-4d3a-8508-3f5f63078166">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$F{barcodeImage}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="448" y="9" width="111" height="15" uuid="37c6564d-307a-41ea-ba30-c304f59bf370"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fiscalClassification}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="240" y="89" width="146" height="28" uuid="c6b5857f-fd78-4c24-b517-93cc6b164136"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ticketDescription}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="88" width="119" height="12" uuid="486cd64c-c45c-4f48-9ace-5e17699175fa"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barcode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="100" width="166" height="30" uuid="bae96359-8b7b-44ff-8f3c-aa53152d6153"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unityDescription}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="161">
+			<line>
+				<reportElement x="0" y="14" width="559" height="1" uuid="6761d974-56db-4aad-958b-19a72d204c8a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="397" y="0" width="83" height="12" uuid="a99e034a-2d43-4eb3-a980-7f5edbbe3e12">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de Volumes:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="480" y="0" width="73" height="12" uuid="5c3bf3e9-5e12-452f-9728-47f9d58ce120"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

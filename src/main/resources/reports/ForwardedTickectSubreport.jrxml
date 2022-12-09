@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="generalItensSubreport" pageWidth="800" pageHeight="69" orientation="Landscape" columnWidth="800" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d69beec7-2bb8-4843-a987-521e2fb63428">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="brNumber" class="java.lang.String"/>
+	<field name="barcode" class="java.lang.String"/>
+	<field name="unityCode" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="origin" class="java.lang.String"/>
+	<field name="repairCenter" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="mnemonic" class="java.lang.String"/>
+	<field name="devolution" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="16" width="75" height="15" uuid="ed896135-4436-4c90-ba91-d46075caeed0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="1" width="100" height="15" uuid="178db077-80dd-43a1-b5dc-cb9f95360e33">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bilhete de Reparo]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="76" y="16" width="60" height="15" uuid="2b529e96-dbd7-4561-8b0f-004811a6523c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="136" y="16" width="108" height="15" uuid="e053442e-5331-405b-a7e2-aeb9d9bda302">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barcode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="136" y="1" width="120" height="15" uuid="cf9edf5e-e209-4718-9b11-8536eb324615">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unidade]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="640" y="16" width="76" height="15" uuid="d9e4289f-cd86-4bad-8d9e-001b375f54fb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{origin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="640" y="1" width="76" height="15" uuid="b61006a0-695c-4fc4-82de-1f642908e147">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Depto. Origem]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="244" y="16" width="108" height="15" uuid="77ac53b9-f047-42ff-bcb9-c992ff8f6af0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unityCode}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="352" y="16" width="188" height="15" uuid="b13c714b-e975-4697-bea5-207fe610a9e6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mnemonic} + " - " + $F{description}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="718" y="16" width="72" height="15" uuid="3a5adffd-6041-4550-9f59-df2280fd8226">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{devolution}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="718" y="1" width="72" height="15" uuid="94dab295-aee5-4db3-85c5-89a0fe64e7ab">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Depto. Devol.]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="540" y="16" width="86" height="15" uuid="3d68e6f7-73ec-4a7b-8d19-1786cf5a834f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repairCenter}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="540" y="1" width="86" height="15" uuid="3d89ee5a-f374-40b4-981b-a8d3602a04ff">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Centro Reparo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="31" width="800" height="1" uuid="5e496471-e978-4db2-b863-6279d053e889">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

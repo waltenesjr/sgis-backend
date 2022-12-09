@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="genericQueryColumns" pageWidth="10000" pageHeight="595" orientation="Landscape" columnWidth="10000" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="a27e700a-70c7-47d4-8d37-e34bb56fb1c9">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="_THIS" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<subreport isUsingCache="false" runToBottom="false">
+				<reportElement x="0" y="0" width="10000" height="20" isPrintWhenDetailOverflows="true" uuid="90dfd621-56af-4143-aa2d-b5e959227c9c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{_THIS})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/genericQueryResultsLine.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

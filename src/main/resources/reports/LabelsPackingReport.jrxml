@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Labels" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="20" uuid="7ada8cd9-2370-48b6-ac87-bfe6828802a3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="inabilita" class="java.lang.Boolean"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="column1" class="java.awt.image.BufferedImage"/>
+	<field name="column2" class="java.awt.image.BufferedImage"/>
+	<field name="column3" class="java.awt.image.BufferedImage"/>
+	<field name="barcode1" class="java.lang.String"/>
+	<field name="barcode2" class="java.lang.String"/>
+	<field name="barcode3" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<image scaleImage="RealSize" hAlign="Center" vAlign="Top">
+				<reportElement stretchType="ElementGroupHeight" x="0" y="0" width="180" height="44" uuid="2c4974ad-11cf-48c1-8eca-3c0cc8dda29a">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[!$P{inabilita}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$F{column1}]]></imageExpression>
+			</image>
+			<image scaleImage="RealSize" hAlign="Center" vAlign="Top">
+				<reportElement stretchType="ElementGroupHeight" x="187" y="0" width="180" height="44" uuid="a8a663e6-ce2e-427c-8c2f-42c098f34ce0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[!$P{inabilita}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$F{column2}]]></imageExpression>
+			</image>
+			<image scaleImage="RealSize" hAlign="Center" vAlign="Top">
+				<reportElement stretchType="ElementGroupHeight" x="377" y="0" width="180" height="44" uuid="5ae2afb0-8f5a-4fe4-aa32-e53dcab6b4d0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<printWhenExpression><![CDATA[!$P{inabilita}]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$F{column3}]]></imageExpression>
+			</image>
+		</band>
+		<band height="12">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="180" height="12" uuid="bca6d66a-d4d3-4715-847d-b3d43931bfb7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barcode1}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="187" y="0" width="180" height="12" uuid="9a63d3a4-864a-43e6-8e3a-0faf00cbe6f5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barcode2}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="377" y="0" width="180" height="12" uuid="f5e1f02e-8df6-4b6c-bad4-730bf46ce9f6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barcode3}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

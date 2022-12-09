@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="averageTimeReport" pageWidth="880" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="840" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="92f28f91-4e23-4d0c-be47-8c11c2a85766">
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="logoVital" class="java.awt.image.BufferedImage"/>
+	<parameter name="spentTotal" class="java.math.BigDecimal"/>
+	<parameter name="spentAverage" class="java.math.BigDecimal"/>
+	<parameter name="total" class="java.lang.Integer"/>
+	<parameter name="repairTimeTotal" class="java.math.BigDecimal"/>
+	<parameter name="repairTimeTotalAvg" class="java.math.BigDecimal"/>
+	<parameter name="repairValueTotal" class="java.math.BigDecimal"/>
+	<parameter name="repairValueTotalAverage" class="java.math.BigDecimal"/>
+	<parameter name="averageExtTimeTotal" class="java.math.BigDecimal"/>
+	<parameter name="averageExtValueTotal" class="java.math.BigDecimal"/>
+	<parameter name="averageIntValueTotal" class="java.math.BigDecimal"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="technicalStaffCod" class="java.lang.String"/>
+	<field name="items" class="java.util.List"/>
+	<field name="technicalStaffName" class="java.lang.String"/>
+	<field name="spentTimeTotal" class="java.math.BigDecimal"/>
+	<field name="repairTimeTotal" class="java.math.BigDecimal"/>
+	<field name="averageExtTimeTotal" class="java.math.BigDecimal"/>
+	<field name="repairValueTotal" class="java.math.BigDecimal"/>
+	<field name="averageIntValueTotal" class="java.math.BigDecimal"/>
+	<field name="averageExtValueTotal" class="java.math.BigDecimal"/>
+	<field name="totalItens" class="java.lang.Integer"/>
+	<field name="spentTimeAverageTotal" class="java.math.BigDecimal"/>
+	<field name="averageRepairTimeTotal" class="java.math.BigDecimal"/>
+	<field name="repairValueAverage" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="236" y="8" width="350" height="13" uuid="e1888361-2fae-4269-ba56-7f1b5bae641c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sistema de Gerência de Instrumentos e Sobressalentes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="21" width="410" height="13" uuid="d3336d84-b73e-4f41-ab51-099e227f4162">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Comparativo de Produtividade Reparos por Técnico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="687" y="8" width="31" height="13" uuid="2acc9d02-776e-4cf9-b050-707610710ca9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pag.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="687" y="21" width="31" height="13" uuid="022e96f6-5de6-4b31-9b56-794cad09468c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="718" y="8" width="89" height="13" uuid="e120faca-efae-4852-8164-bcb79ba672c0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="718" y="21" width="89" height="13" uuid="b053f066-64c0-4255-916a-aca4c3f1222c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="59" y="8" width="41" height="26" uuid="5f98b49f-175a-42c1-80b2-5ff957b3f1c5"/>
+				<imageExpression><![CDATA[$P{logoVital}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="150" height="19" uuid="955892f9-0520-4b6b-be37-3548bad96db4"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{technicalStaffCod}]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="false" runToBottom="false">
+				<reportElement x="1" y="19" width="850" height="31" isPrintWhenDetailOverflows="true" uuid="a678b2a7-9851-4915-aceb-f23f644cf09f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{items})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/ProductivityComparisonSubreport.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isBlankWhenNull="true">
+				<reportElement x="150" y="0" width="701" height="19" uuid="a96c4c59-4752-461e-9883-d76e456359c8"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{technicalStaffName}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="30">
+			<staticText>
+				<reportElement x="164" y="0" width="60" height="15" uuid="8a6832ed-14c2-4569-92c5-b1b1bc3f5fac">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Totais:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="164" y="15" width="60" height="15" uuid="ba46369a-486e-4b1a-aaa2-61471681ffa5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Médias:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="224" y="0" width="85" height="15" uuid="ee08236a-543f-42ab-812a-b3f2f40632cc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalItens}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#0.00#;#0,00#-" isBlankWhenNull="true">
+				<reportElement x="310" y="0" width="76" height="15" uuid="2cf4e878-30f1-4bab-8f86-3ce17a42f760">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{spentTimeTotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#0.00#;#0,00#-" isBlankWhenNull="true">
+				<reportElement x="464" y="0" width="76" height="15" uuid="58544878-37e9-4b45-8242-24a55ffb9150">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repairTimeTotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="619" y="0" width="76" height="15" uuid="73eda2c0-d409-4426-ae3f-97756b28c268">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repairValueTotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#0.00#;#0,00#-" isBlankWhenNull="true">
+				<reportElement x="464" y="15" width="76" height="15" uuid="7afeed6e-aadc-4d0b-ad49-af65c91b4538">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{averageRepairTimeTotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#0.00#;#0,00#-" isBlankWhenNull="true">
+				<reportElement x="310" y="15" width="76" height="15" uuid="28455f8a-c282-4acd-873a-088e1a7a2bc4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{spentTimeAverageTotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="619" y="15" width="76" height="15" uuid="7c1b6eea-2c60-4dab-b53a-a35ccc95ecdc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repairValueAverage}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#0.00#;#0,00#-" isBlankWhenNull="true">
+				<reportElement x="542" y="15" width="76" height="15" uuid="5f14fadc-2279-48d5-8672-ae6ceb7d6811">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{averageExtTimeTotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="696" y="15" width="76" height="15" uuid="886fd67d-adf6-41eb-84f6-da687e15493a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{averageIntValueTotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="774" y="15" width="76" height="15" uuid="b3af2548-e711-48be-994a-27cd0945b11b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{averageExtValueTotal}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="850" height="1" uuid="20273e77-4638-4732-84c6-bdfbc90513ff">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="29" width="850" height="1" uuid="741cb8b7-a4dc-4fa9-90cf-1c7734237fec">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="30">
+			<textField isBlankWhenNull="true">
+				<reportElement x="774" y="15" width="76" height="15" uuid="7b6519a4-c5d5-481c-9bbe-e69cc4f2d8bd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{averageExtValueTotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="696" y="15" width="76" height="15" uuid="31de0b5f-b4b2-4003-9a16-63f6f3cd84c5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{averageIntValueTotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="619" y="15" width="76" height="15" uuid="e6fe5027-6595-4952-96af-59e8b3d97cfc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{repairValueTotalAverage}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#0.00#;#0,00#-" isBlankWhenNull="true">
+				<reportElement x="542" y="15" width="76" height="15" uuid="3773568c-9efa-4ed0-a4ba-7cedfb2c0954">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{averageExtTimeTotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#0.00#;#0,00#-" isBlankWhenNull="true">
+				<reportElement x="464" y="15" width="76" height="15" uuid="9f900c37-bfdd-4094-a6e3-0422f0b532fd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{repairTimeTotalAvg}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#0.00#;#0,00#-" isBlankWhenNull="true">
+				<reportElement x="310" y="15" width="76" height="15" uuid="e6c642ec-5995-4879-9e61-4649437c66d3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{spentAverage}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="224" y="0" width="85" height="15" uuid="5fb4a341-739f-46ec-96b6-d0d821b3d40d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#0.00#;#0,00#-" isBlankWhenNull="true">
+				<reportElement x="310" y="0" width="76" height="15" uuid="2b7d73b8-6f88-4ae2-8851-db2c957165d4">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{spentTotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#0.00#;#0,00#-" isBlankWhenNull="true">
+				<reportElement x="464" y="0" width="76" height="15" uuid="56390f3a-19b3-4f39-bb53-31894b71cd8c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{repairTimeTotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="619" y="0" width="76" height="15" uuid="d8794ef0-d058-4d67-9be1-cceae83c6f76">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{repairValueTotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="150" y="15" width="74" height="15" uuid="33f100cf-7560-4494-ad67-89b18b5845f7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Média Geral:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="0" width="74" height="15" uuid="8cb17ded-b46f-477b-b91f-c062818acc75">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Geral:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

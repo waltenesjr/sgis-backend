@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FichaFASReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0de29f75-05c5-4342-b6e7-303e9290c13e">
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="logoVital" class="java.awt.image.BufferedImage"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="items" class="java.util.List"/>
+	<field name="barcode" class="java.lang.String"/>
+	<field name="barcodeImage" class="java.awt.image.BufferedImage"/>
+	<field name="unityCode" class="java.lang.String"/>
+	<field name="responsible" class="java.lang.String"/>
+	<field name="station" class="java.lang.String"/>
+	<field name="deposit" class="java.lang.String"/>
+	<field name="totalLength" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="133" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="108" y="15" width="339" height="13" uuid="61d2d542-73e9-4b76-bc1e-2833452e7782">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sistema de Gerência de Instrumentos e Sobressalentes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="28" width="310" height="13" uuid="aba8b1bb-2af7-4ba4-ba8e-42252b6eddc6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Consulta por Propriedade Elétrica / Física]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="454" y="15" width="31" height="13" uuid="d5062d4d-54e0-4c51-83dc-8c004cc8fa60">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pag.:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="454" y="28" width="31" height="13" uuid="dfcab285-57f7-406c-be01-3a0e036eaf1b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="485" y="15" width="29" height="13" uuid="b7057c45-4fe4-4440-a3f9-e78bbe3c909d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="485" y="28" width="90" height="13" uuid="4cf8d33b-5f4e-442c-96d4-44f2cbcd5e9a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="9" y="15" width="41" height="26" uuid="99a52eb0-92ff-4d3c-a088-99b5ceac117b"/>
+				<imageExpression><![CDATA[$P{logoVital}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="60" width="559" height="3" uuid="c912794f-79ee-4b47-8cd4-befcef5f34ab">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="63" width="60" height="17" uuid="37ed1a55-9328-45df-9258-ed55ec7c5d39">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SansSerif" size="9" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Cod. Barras:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="90" width="54" height="16" uuid="cbd4bce4-1622-4525-9cc1-e23a03e39e78"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Responsável:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="90" width="50" height="16" uuid="f487430c-ee68-41ad-a02f-6265e89f1399"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Localização:]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement x="65" y="64" width="145" height="25" uuid="c85b33a3-ebb3-4e48-98c6-2efa0be35690">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$F{barcodeImage}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="269" y="91" width="90" height="15" uuid="d58d2d75-b491-4819-8209-5f1bd9dacd49"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{responsible}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="65" y="89" width="145" height="15" uuid="50c86910-1259-4e0f-8c51-55df513517c2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barcode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="251" y="63" width="98" height="17" uuid="1a8db012-922a-4d7c-b5d8-dab1e1fd6476">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SansSerif" size="9" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Modelo de Unidade :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="349" y="63" width="160" height="17" uuid="7da8f02f-4a82-4ffc-96d9-3982ca5172e3"/>
+				<textElement textAlignment="Left">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unityCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="90" width="40" height="16" uuid="9f68f841-b08b-48a8-aaf8-c593f206bcda"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estação:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="402" y="90" width="66" height="15" uuid="08d91eb1-4625-4c81-ac04-4ae50023d7d0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{station}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="520" y="90" width="45" height="15" uuid="14667ca7-a0b8-4c0e-9329-2d4419ba9522"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deposit}]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="false" runToBottom="false">
+				<reportElement x="0" y="110" width="559" height="20" isPrintWhenDetailOverflows="true" uuid="23fd02ce-400c-4777-a649-2eb43ae73af1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<subreportParameter name="totalLength">
+					<subreportParameterExpression><![CDATA[$F{totalLength}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{items})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reports/PhysicalEPSubreport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

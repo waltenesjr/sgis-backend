@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="generalItensSubreport" pageWidth="800" pageHeight="69" orientation="Landscape" columnWidth="800" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d69beec7-2bb8-4843-a987-521e2fb63428">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="brNumber" class="java.lang.String"/>
+	<field name="barcode" class="java.lang.String"/>
+	<field name="unityCode" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="origin" class="java.lang.String"/>
+	<field name="repairCenter" class="java.lang.String"/>
+	<field name="defect" class="java.lang.String"/>
+	<field name="defectDescription" class="java.lang.String"/>
+	<field name="situation" class="java.lang.String"/>
+	<field name="warrantyProvider" class="java.lang.String"/>
+	<field name="modelEquipment" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="warranty" class="java.lang.String"/>
+	<field name="value" class="java.math.BigDecimal"/>
+	<field name="repairExternalIn" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="69" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isBlankWhenNull="true">
+				<reportElement x="5" y="16" width="124" height="15" uuid="824826a0-8408-4776-8d27-b56cba6b06fc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="1" width="100" height="15" uuid="cd28206d-2df2-424d-93d6-63ed3a6cfd78">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bilhete de Reparo]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="5" y="48" width="124" height="15" uuid="c0e16771-fd89-4300-8310-58b85e0de98d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{barcode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="33" width="100" height="15" uuid="ba096ead-f69c-48ff-b0c5-6b9e9b9eb879">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unidade]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="152" y="16" width="118" height="15" uuid="3d31751d-1bed-4d0a-9e88-718178642776">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="152" y="1" width="100" height="15" uuid="0a829081-334a-4d6b-94b8-618b38ca3332">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="152" y="48" width="118" height="15" uuid="0057676c-bef5-4b3a-8755-3605a5448321">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unityCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="152" y="33" width="100" height="15" uuid="e2bd2d4d-b9c9-4bae-95a9-b98b2dc168a1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cod. Unidade ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="294" y="16" width="186" height="15" uuid="5cd65b98-5e3a-481b-8fd7-4749601c6282">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repairExternalIn}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="294" y="1" width="120" height="15" uuid="f9460510-7ee1-4d1c-9808-948c061eeabb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reparo (E)xterno / (I)nterno]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="294" y="48" width="186" height="15" uuid="3cf1f929-bbe1-466f-830f-84b121b25b39">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="294" y="33" width="100" height="15" uuid="386fd8a9-ef53-4346-b7f6-4887fa37c437">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="503" y="16" width="100" height="15" uuid="f67ffd48-cb6d-4093-8d6b-ef22d46f906f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{origin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="503" y="1" width="100" height="15" uuid="093e9ffd-0c88-45c3-a0e6-f56e3a5f61c2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Origem]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="503" y="48" width="100" height="15" uuid="92d06cbc-f499-4cd0-aae3-9cc8a79158b8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{repairCenter}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="503" y="33" width="100" height="15" uuid="af8bf198-713f-4c77-8ba3-c7ceb920642a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Centro Reparo]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="650" y="16" width="118" height="15" uuid="12d48f71-bbaa-491c-9495-bbb2da259d3e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{defect} + " - " + $F{defectDescription}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="650" y="1" width="100" height="15" uuid="f4b20fda-6228-499a-a70b-f85979fea8c8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Defeito]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="650" y="48" width="59" height="15" uuid="506f16ef-c80b-47dc-8c34-2714802fb2a1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unityCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="650" y="33" width="50" height="15" uuid="c7d45e60-da7e-4101-9f17-854191025402">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Situação]]></text>
+			</staticText>
+			<textField pattern="#,##0.###;#.##0,###-" isBlankWhenNull="true">
+				<reportElement x="730" y="48" width="59" height="15" uuid="8efd07ef-01fe-446d-b6bc-81b6997d7485">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="730" y="33" width="50" height="15" uuid="f97ca92f-a7a8-4b48-8444-7cfa5666cf51">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="68" width="800" height="1" uuid="743dbdec-0997-493f-830e-6b574c45da89">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
